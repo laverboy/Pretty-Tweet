@@ -42,7 +42,7 @@ jQuery.fn.getTweet = function(user){
 	var el = $(this);
     el.html('Loading latest tweet&hellip;');
 	var request = $.ajax({
-		url: 'http://twitter.com/statuses/user_timeline.json?screen_name=' + user + '&count=1&callback=?',
+		url: 'https://api.twitter.com/1/statuses/user_timeline.json?screen_name='+ user +'&count=1',
 		dataType: 'jsonp',
 		timeout: 5000
 	});
