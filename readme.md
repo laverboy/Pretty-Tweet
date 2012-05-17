@@ -15,7 +15,7 @@ call the function on an empty element where you would like the tweet.
     
     <script type="text/javascript">
         jQuery(document).ready(function($){
-        	$("#tweet").prettytweet('mlaver');
+        	$("#tweet").prettyTweet('mlaver');
         });
     </script>
     
