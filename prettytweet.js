@@ -50,12 +50,17 @@ jQuery.fn.prettyTweet = function(user){
 		// result returned
 		var tweet = data[0].text;
 
-		// process links and reply
-		tweet = tweet.replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig, function(url) {
-			return '<a href="'+url+'">'+url+'</a>';
-		}).replace(/B@([_a-z0-9]+)/ig, function(reply) {
+		tweet = tweet
+		// process links
+		.replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig, '<a href="$1">$1</a>')
+		// process reply
+		.replace(/B@([_a-z0-9]+)/ig, function(reply) {
 			return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
-		});
+		})
+		// process usernames
+		.replace(/(^|\s)@(\w+)/g, '$1<a href="http://www.twitter.com/$2">@$2</a>')
+		// process hashes
+		.replace(/(^|\s)#(\w+)/g, '$1#<a href="http://search.twitter.com/search?q=%23$2">$2</a>');
 
 		var fulldate = data[0].created_at,
 		date = prettyDate(fulldate),
