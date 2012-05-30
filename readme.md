@@ -8,15 +8,11 @@ Usage
 -----
 
 Make sure both jQuery and Pretty Tweet are both included on the page then simply 
-call the function on an empty element where you would like the tweet.
+add an element with data-prettweet=[twitter username].
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="/js/jquery.prettytweet.js" type="text/javascript"></script>
     
-    <script type="text/javascript">
-        jQuery(document).ready(function($){
-        	$("#tweet").prettyTweet('mlaver');
-        });
-    </script>
+    <div data-prettytweet="mlaver"></div>
     
 That is all.
