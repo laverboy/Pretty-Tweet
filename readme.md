@@ -8,7 +8,7 @@ Usage
 -----
 
 Make sure both jQuery and Pretty Tweet are both included on the page then simply 
-add an element with data-prettweet=[twitter username].
+add an element with data-prettyweet=[twitter username].
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="/js/jquery.prettytweet.js" type="text/javascript"></script>
