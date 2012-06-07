@@ -129,15 +129,12 @@
 		<div id="main">
 			<p>Pretty Tweet is a really simple jQuery plugin that gets the latest tweet from the provided username along with a <a href="http://ejohn.org/blog/javascript-pretty-date/">pretty timestamp</a> and highlighted links.</p>
 			<h2>Usage</h2>
-			<p>Make sure both jQuery and prettyTweet are both included on the page then simply call the function on an empty element where you would like the tweet.</p>
+			<p>Make sure both jQuery and Pretty Tweet are both included on the page then simply 
+add an element with an attribute of data-prettyweet=[twitter username].</p>
 			<pre>&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"&gt;&lt;/script&gt;
 &lt;script src="/js/jquery.prettytweet.js"&gt;&lt;/script&gt;
 
-&lt;script type="text/javascript"&gt;
-    jQuery(document).ready(function($){
-        $("#tweet").prettytweet('mlaver');
-    });
-&lt;/script&gt;</pre>
+&lt;div data-prettytweet="mlaver"&gt;&lt;/div&gt;</pre>
 			<p style="text-align:center;">-----</p>
 			
 			<input id="uname" type="text" value="mlaver" />
