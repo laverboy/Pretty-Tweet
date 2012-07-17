@@ -70,8 +70,7 @@ if ( typeof jQuery !== "undefined" ){
             el.html("I'm sorry but there seems to have been an error retrieving the latest tweet. Please try again later.");
         });
     };
-    $('[data-prettytweet]').each(function(key,item)  { $(item).prettytweet($(item).data('prettytweet')); });
-    
+    $(document).ready( function () {
+        $('[data-prettytweet]').each(function(key,item)  { $(item).prettytweet($(item).data('prettytweet')); });
+    });
 })(jQuery);
-
-console.log('hi');
