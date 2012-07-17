@@ -38,7 +38,7 @@ if ( typeof jQuery !== "undefined" ){
 (function ($) {
     jQuery.fn.prettytweet = function(user){
         var el = $(this);
-        el.html('Loading latest tweet&hellip;');
+        el.html('Loading latest tweet&hellip;');
         var request = $.ajax({
             url: 'https://api.twitter.com/1/statuses/user_timeline.json?screen_name='+ user +'&count=1',
             dataType: 'jsonp',
@@ -48,7 +48,7 @@ if ( typeof jQuery !== "undefined" ){
             // result returned
             var tweet = data[0].text;
     
-            tweet = tweet
+            tweet = tweet
             // process links
             .replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig, '<a href="$1">$1</a>')
             // process usernames
