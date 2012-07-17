@@ -11,7 +11,7 @@ Make sure both jQuery and Pretty Tweet are both included on the page then simply
 add an element with an attribute of data-prettyweet=[twitter username].
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="/js/jquery.prettytweet.js" type="text/javascript"></script>
+    <script src="/js/prettytweet.js" type="text/javascript"></script>
     
     <div data-prettytweet="mlaver"></div>
     
