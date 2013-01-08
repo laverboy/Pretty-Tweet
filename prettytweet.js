@@ -43,8 +43,15 @@ if ( typeof jQuery !== "undefined" ){
             url: 'https://api.twitter.com/1/statuses/user_timeline.json?screen_name='+ user +'&count=1',
             dataType: 'jsonp',
             timeout: 5000
-        });
+        }),
+        failed = function () {
+            el.html("I'm sorry but there seems to have been an error retrieving the latest tweet. Please try again later.");
+        };
+        
         request.done(function(data){
+            // if result is empty
+            if (data.length === 0) { failed(); return false; }
+            
             // result returned
             var tweet = data[0].text;
     
@@ -66,9 +73,7 @@ if ( typeof jQuery !== "undefined" ){
             el.html(tweet);
         });
 
-        request.fail(function(data){
-            el.html("I'm sorry but there seems to have been an error retrieving the latest tweet. Please try again later.");
-        });
+        request.fail(failed);
     };
     $(document).ready( function () {
         $('[data-prettytweet]').each(function(key,item)  { $(item).prettytweet($(item).data('prettytweet')); });
